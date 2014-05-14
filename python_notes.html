@@ -1,0 +1,853 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>python_notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/* 
+   This document has been created with Marked.app <http://markedapp.com>, Copyright 2011 Brett Terpstra
+   Please leave this notice in place, along with any additional credits below.
+   ---------------------------------------------------------------
+   Title: Theme title
+   Author: Your name and optional url
+   Description: Basic description of the theme.
+*/
+
+body
+{
+    -webkit-font-smoothing:antialiased;
+    font:normal .8764em/1.5em Arial,Verdana,sans-serif;
+    margin:0
+}
+
+html>body
+{
+    font-size:13px
+}
+
+li
+{
+    font-size:110%
+}
+
+li li
+{
+    font-size:100%
+}
+
+li p
+{
+    font-size:100%;
+    margin:.5em 0
+}
+
+h1
+{
+    color:#000;
+    font-size:2.2857em;
+    line-height:.6563em;
+    margin:.6563em 0
+}
+
+h2
+{
+    color:#111;
+    font-size:1.7143em;
+    line-height:.875em;
+    margin:.875em 0
+}
+
+h3
+{
+    color:#111;
+    font-size:1.5em;
+    line-height:1em;
+    margin:1em 0
+}
+
+h4
+{
+    color:#111;
+    font-size:1.2857em;
+    line-height:1.1667em;
+    margin:1.1667em 0
+}
+
+h5
+{
+    color:#111;
+    font-size:1.15em;
+    line-height:1.3em;
+    margin:1.3em 0
+}
+
+h6
+{
+    font-size:1em;
+    line-height:1.5em;
+    margin:1.5em 0
+}
+
+body,p,td,div
+{
+    color:#111;
+    font-family:"Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+    word-wrap:break-word
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    line-height:1.5em
+}
+
+a
+{
+    -webkit-transition:color .2s ease-in-out;
+    color:#0d6ea1;
+    text-decoration:none
+}
+
+a:hover
+{
+    color:#3593d9
+}
+
+/*h2 em
+{
+    color:#111;
+    padding-left:10px;
+    text-shadow:0 1px 0 #FFF
+}*/
+
+blockquote p
+{
+  font-size:110%;
+  font-style:italic;
+  line-height:1.6em;
+}
+
+.footnote
+{
+    color:#0d6ea1;
+    font-size:.8em;
+    vertical-align:super
+}
+
+#wrapper img
+{
+    max-width:100%;
+    height:auto
+}
+
+dd
+{
+    margin-bottom:1em
+}
+
+li > p:first-child
+{
+    margin:0
+}
+
+ul ul,ul ol
+{
+    margin-bottom:.4em
+}
+
+caption,col,colgroup,table,tbody,td,tfoot,th,thead,tr
+{
+    border-spacing:0
+}
+
+table
+{
+    border:1px solid rgba(0,0,0,0.25);
+    border-collapse:collapse;
+    display:table;
+    empty-cells:hide;
+    margin:-1px 0 23px;
+    padding:0;
+    table-layout:fixed
+}
+
+caption
+{
+    display:table-caption;
+    font-weight:700
+}
+
+col
+{
+    display:table-column
+}
+
+colgroup
+{
+    display:table-column-group
+}
+
+tbody
+{
+    display:table-row-group
+}
+
+tfoot
+{
+    display:table-footer-group
+}
+
+thead
+{
+    display:table-header-group
+}
+
+td,th
+{
+    display:table-cell
+}
+
+tr
+{
+    display:table-row
+}
+
+table th,table td
+{
+    font-size:1.1em;
+    line-height:23px;
+    padding:0 1em
+}
+
+table thead
+{
+    background:rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.15);
+    border-bottom:1px solid rgba(0,0,0,0.2)
+}
+
+table tbody
+{
+    background:rgba(0,0,0,0.05)
+}
+
+table tfoot
+{
+    background:rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.15);
+    border-top:1px solid rgba(0,0,0,0.2)
+}
+
+figure
+{
+    display:inline-block;
+    margin-bottom:1.2em;
+    position:relative;
+    margin:1em 0
+}
+
+figcaption
+{
+    font-style:italic;    
+    text-align:center;
+    background:rgba(0,0,0,.9);
+    color:rgba(255,255,255,1);
+    position:absolute;
+    left:0;
+    bottom:-24px;
+    width:98%;
+    padding:1%;
+    -webkit-transition:all .2s ease-in-out;
+}
+
+figure:hover>figcaption
+{
+    /* background:rgba(0,0,0,1) */
+}
+
+/* Styles used when "Tab-indented text is poetry" is set */
+.poetry pre
+{
+    display:block;
+    font-family:Georgia, Garamond, serif!important;
+    font-size:110%!important;
+    font-style:italic;
+    line-height:1.6em;
+    margin-left:1em
+}
+
+.poetry pre code
+{
+    font-family:Georgia, Garamond, serif!important
+}
+
+/* important rules for keeping line-height from being affected by sub */
+sup,sub,a.footnote
+{
+    font-size:1.4ex;
+    height:0;
+    line-height:1;
+    position:relative;
+}
+
+sup {
+    vertical-align:super;
+}
+
+sub {
+    vertical-align: sub;
+    top: -1px;
+}
+
+p,h5
+{
+    font-size:1.1429em;
+    line-height:1.3125em;
+    margin:1.3125em 0
+}
+
+dt,th
+{
+    font-weight:700
+}
+
+table tr:nth-child(odd),table th:nth-child(odd),table td:nth-child(odd)
+{
+    background:rgba(255,255,255,0.06)
+}
+
+table tr:nth-child(even),table td:nth-child(even)
+{
+    background:rgba(0,0,0,0.06)
+}
+
+@media print {
+    /* print only styles. Keep it clean */
+    body
+    {
+        overflow:auto
+    }
+    img, pre, blockquote, table, figure, p {
+        page-break-inside: avoid
+    }
+    .footnotes { page-break-before: always }
+
+    #wrapper
+    {
+        background:#fff;
+        color:#303030;
+        font-size:85%;
+        padding:10px;
+        position:relative;
+        text-indent:0
+    }
+}
+
+@media screen {
+    /* Screen-only styles, including inverted styles */
+    .inverted #wrapper,.inverted {
+        background:rgba(37, 42, 42, 1)
+    }
+    .inverted hr {
+        border-color: rgba(51, 63, 64, 1) !important;
+    }
+    .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted pre,.inverted code,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt
+    {
+        color:#eee!important
+    }
+    .inverted table tr:nth-child(odd), .inverted table th:nth-child(odd), .inverted table td:nth-child(odd) {
+      background: none;
+    }
+    .inverted a
+    {
+        color:rgba(172, 209, 213, 1);
+    }
+
+    #wrapper
+    {
+        padding:20px
+    }
+
+    /* styles for more colorful selection highlights */
+    ::selection { background:rgba(157, 193, 200,.5)}
+    h1::selection { background-color:rgba(45, 156, 208, .3)}
+    h2::selection { background-color:rgba(90, 182, 224, .3)}
+    h3::selection,
+    h4::selection,
+    h5::selection,
+    h6::selection,li::selection,ol::selection { background-color:rgba(133, 201, 232, .3)}
+    code::selection { background-color:rgba(0,0,0,.7);color:#eee}
+    code span::selection {background-color:rgba(0,0,0,.7) !important;color:#eee !important}
+    a::selection { background-color:rgba(255, 230, 102,.2)}
+    .inverted a::selection { background-color:rgba(255, 230, 102,.6)}
+	td::selection,th::selection,caption::selection { background-color: rgba(180, 237, 95, .5);}
+}
+
+
+</style>
+
+</head>
+<body class="inverted">
+  <div id="wrapper">
+      <h3 id="basicpython">Basic Python</h3>
+
+<h4 id="documentation">Documentation</h4>
+
+<ul>
+<li>It is recommended to design and write the HTML page manually in a separate file, insert the HTML text from the file inside a triple-quoted Python string, and replace relevant parts of the HTML text by variables in the script.</li>
+</ul>
+
+<h4 id="runninganapplication">Running an Application</h4>
+
+<ul>
+<li><code>os.system</code> is for running stand-alone applications (programs). The return value from <code>os.system</code> is zero if the argument command was successfully executed.</li>
+<li>To redirect the output from the application into a list of lines, one must open a pipe, which creates a file-like object that can be read into a list. (<code>output = os.popen(cmd)</code>)</li>
+</ul>
+
+<h4 id="outputformatting">Output Formatting</h4>
+
+<ul>
+<li><code>print</code> adds a newline unless you end the <code>print</code> statement with a comma.</li>
+</ul>
+
+<h3 id="variables">Variables</h3>
+
+<h4 id="thenonevariable">The None Variable</h4>
+
+<ul>
+<li>To check if a variable <code>answer</code> is <code>None</code> or not, always use <code>if answer is None</code> or <code>if answer is not None</code>.</li>
+<li><code>is</code> tests for object identity, while <code>==</code> tests if two objects have the same value (i.e., the same content).</li>
+</ul>
+
+<h4 id="numbersandnumericalexpressions">Numbers and Numerical Expressions</h4>
+
+<ul>
+<li>Double precision complex numbers of type <code>complex</code>: <code>0j</code>, <code>1+.5j</code>, <code>-3.14-2j</code>.
+
+<ul>
+<li>The complex parts: <code>r.real</code> and <code>r.imag</code>.</li>
+<li>The <code>cmath</code> module implements for <code>complex</code> types.</li>
+</ul></li>
+<li>Python&#8217;s <code>int</code> and <code>float</code> correspond to <code>long int</code> and <code>double</code> in C.</li>
+</ul>
+
+<h4 id="liststuplesanddictionaries">Lists, Tuples, and Dictionaries</h4>
+
+<ul>
+<li><p>A list is sourrounded by square brackets (<code>[]</code>), and items are separated by commas; a tuple is enclosed in standard parenthesis (<code>()</code>). </p></li>
+<li><p>Ordinary lists (and dictionaries) are mutable; tuples are immutable. </p></li>
+<li><p>A trailing comma is needed after the element in tuples that has one element only, e.g., <code>mytuple = (str1,)</code>. </p></li>
+<li>Adding, indexing, finding and removing list items.
+
+<ul>
+<li><code>arglist.append(myvar2)</code></li>
+<li><code>i = arglist.index('tmp.ps')</code></li>
+<li><code>del arglist[i]</code> or <code>arglist.remove('tmp.ps')</code></li>
+</ul></li>
+<li><p>The <code>range</code> function returns a list of integers, so for very long loops <code>range</code> may imply significant storage demands. The <code>xrange</code> function is then an alterative, but comsumes less memory and CPU time. </p></li>
+<li>List comprehension: <code>y = [float(yi) for yi in line.split()]</code>
+
+<ul>
+<li>The same task can be carried out using the <code>map</code> function: <code>y = map(float, line.split())</code></li>
+</ul></li>
+<li><p>Reversing and sorting lists (in-place operations). </p>
+
+<pre><code>mylist.reverse()
+mylist.sort()
+</code></pre></li>
+</ul>
+
+<h4 id="dictionaries">Dictionaries</h4>
+
+<ul>
+<li>All environment variables a user has defined are available in Python scripts throught the dictionary-like variable <code>os.environ</code>.
+
+<ul>
+<li><code>os.environ['PATH']</code>, <code>os.pathsep</code>, <code>os.path.join</code></li>
+</ul></li>
+</ul>
+
+<h4 id="stringoperations">String Operations</h4>
+
+<ul>
+<li>The raw string, starting with <code>r</code>, are particularly suited in cases where backslashes appear frequently.</li>
+<li>Upper case: <code>s1.upper()</code>; lower case: <code>s1.lower()</code></li>
+</ul>
+
+<h4 id="textprocessing">Text Processing</h4>
+
+<h5 id="textsearching">Text Searching</h5>
+
+<ul>
+<li>Exact string match:
+
+<ul>
+<li><code>if line == 'double':</code></li>
+<li><code>if 'double' in line:</code></li>
+<li><code>if line.find('double') != -1:</code></li>
+</ul></li>
+<li>Matching with Unix shell-style wildcard notation:
+
+<ul>
+<li><code>import fnmatch; if fnmatch.fnmatch(line, 'double*'):</code></li>
+</ul></li>
+<li>Matching with full regular expressions:
+
+<ul>
+<li><code>import re; if re.search(r'double', line):</code></li>
+</ul></li>
+</ul>
+
+<h5 id="textsubstitution">Text Substitution</h5>
+
+<ul>
+<li><code>r = r.replace(s, t)</code></li>
+<li><code>r = re.sub(pattern, replacement, t)</code></li>
+<li><code>cre = re.compile(pattern); r = cre.sub(replacement, r)</code></li>
+</ul>
+
+<h5 id="regularexpressionfunctionality">Regular Expression Functionality</h5>
+
+<ul>
+<li>Compile a regular expression: <code>c = re.compile(pattern, flags)</code></li>
+<li>Match a pattern: <code>m = re.search(pattern, string, flags)</code>, <code>m = c.search(string)</code></li>
+<li>Substitute a pattern: <code>string = re.sub(pattern, replacement, string)</code>, <code>string = c.sub(replacement, string)</code></li>
+<li>Find a multiple matches in a string: <code>list = re.findall(pattern, string)</code>, <code>list = c.findall(string)</code></li>
+<li>Split strings: <code>list = re.split(pattern, string)</code>, <code>list = c.split(string)</code></li>
+</ul>
+
+<h4 id="thebasicsofapythonclass">The Basics of a Python Class</h4>
+
+<ul>
+<li><em>Data attributes</em> and <em>method</em> (must have <code>self</code> as the first argument)</li>
+<li>Subclassing: call base class constructor in its constructor</li>
+</ul>
+
+<h4 id="copyandassignment">Copy and Assignment</h4>
+
+<ul>
+<li>Variables in Python are references to Python objects.</li>
+<li><em>Shallow copy</em> means copying references and <em>deep copy</em> implies copying the complete contents of an object.</li>
+</ul>
+
+<h3 id="functions">Functions</h3>
+
+<h4 id="variablenumberofarguments">Variable Number of Arguments</h4>
+
+<ul>
+<li>An asterix as prefix to the argument name signifies a variable-length argument list. A double asterix as prefix denotes a variable-length set of keyword arguments. For example, <code>def somefunc(a, b, *args, **kwargs):</code>.</li>
+<li>In Python, only references are transferred, and the garbage collecting system does not delete objects as long as there are references to them.</li>
+</ul>
+
+<h4 id="functionobjects">Function Objects</h4>
+
+<ul>
+<li>Lambda function is known as anonymous inline function: <code>lambda &lt;args&gt;: &lt;expression&gt;</code> (the same as <code>def somefunc(&lt;args&gt;): return &lt;expression&gt;</code>)</li>
+</ul>
+
+<h3 id="workingwithfilesanddirectories">Working with Files and Directories</h3>
+
+<h4 id="listingfilesinadirectory">Listing Files in a Directory</h4>
+
+<ul>
+<li><code>import glob; filelist = glob.glob('*.ps') + glob.glob('*.gif')</code></li>
+<li><code>files = os.listdir(r'C:\hpl\scripting')      # Windows</code></li>
+</ul>
+
+<h4 id="testingfiletypes">Testing File Types</h4>
+
+<ul>
+<li><code>isfile</code>, <code>isdir</code>, <code>islink</code> in the <code>os.path</code> module</li>
+<li>Age and size of a file: <code>os.path.getatime()</code>, <code>os.path.getmtime()</code>, and <code>os.path.getsize()</code></li>
+</ul>
+
+<h4 id="removingfilesanddirectories">Removing Files and Directories</h4>
+
+<ul>
+<li><code>os.remove()</code></li>
+<li>Remove a directory tree: <code>shutil.rmtree()</code></li>
+</ul>
+
+<h2 id="numericalcomputinginpython">Numerical Computing in Python</h2>
+
+<h3 id="aquicknumpyprimer">A Quick NumPy Primer</h3>
+
+<h4 id="creatingarrays">Creating Arrays</h4>
+
+<ul>
+<li>Copying an existing array: <code>r = x.copy()</code></li>
+<li>Array with a sequence of numbers: <code>linspace(start, stop, n)</code> or <code>r_[start, stop, incj]</code> (use <code>j</code> at the end for the increment)</li>
+<li>Array construction from a Python list: <code>a = array(p1)</code> or the other way around (to make a Python list) <code>a.tolist()</code>. Or just transform an object into an array <code>a = asarray(a)</code>.</li>
+<li>Changing array dimensions: <code>reshape()</code> and <code>shape()</code> (<code>a.size</code> is the total number of elements in the array <code>a</code>)</li>
+<li>NumPy arrays employ the same storage scheme as in C, but not in Fortran. However, it is easy to transform with using <code>asarray</code>. (<code>af = asarray(a, order='Fortran')</code>)</li>
+</ul>
+
+<h4 id="arrayindexing">Array Indexing</h4>
+
+<ul>
+<li>Slicing a matrix gives a reference to the underlying array. While you change the new one, the old one is also changed. Use the <code>copy()</code> to have the duplicated.</li>
+<li><code>a.argmax()</code> and <code>a.argmin()</code></li>
+<li><code>a.ravel()</code> makes multi-dimensional matrix <code>a</code> into 1D.</li>
+<li><code>a.max()</code>, <code>a.min()</code>; <code>a.sort()</code>, <code>sum(a)</code>, <code>a.mean()</code>, <code>a.var()</code>, <code>a.std()</code>; <code>clip(min=, max=)</code> removes the outliers.</li>
+</ul>
+
+<h4 id="typetesting">Type Testing</h4>
+
+<ul>
+<li><code>type(a)    # numpy.ndarray</code>; <code>a.dtype.name</code></li>
+</ul>
+
+<h3 id="vectorizedalgorithms">Vectorized Algorithms</h3>
+
+<ul>
+<li><code>where(condition, x1, x2)</code></li>
+<li>Vectorization.</li>
+<li>Slicing (for recursive equations).</li>
+</ul>
+
+<h3 id="moreadvancedarraycomputing">More Advanced Array Computing</h3>
+
+<h4 id="randomnumbers">Random Numbers</h4>
+
+<pre><code>    import random; random.seed(2198)
+    random.random()
+    random.uniform(-1, 1)
+    random.gauss(0, 1)
+</code></pre>
+
+<ul>
+<li>Calling up the <code>random</code> module in a loop for generating large random samples is a slow process.
+
+<ul>
+<li>Use <code>random</code> modeule in the NumPy package. (<code>from numpy import *</code>)</li>
+</ul></li>
+</ul>
+
+<h4 id="linearalgebra">Linear Algebra</h4>
+
+<ul>
+<li><code>linalg</code> module.
+
+<ul>
+<li><code>dot(m1, m2)</code>: matrix-vector product</li>
+<li><code>linalg.solve(A, b)</code>: solve linear system A * y = b</li>
+<li><code>linalg.det(A)</code>: determinant</li>
+<li><code>linalg.inv(A)</code>: inverse</li>
+<li>Eigenvalues and eigenvectors:
+
+<ul>
+<li><code>A_eigenvalues = linalg.eigvals(A)</code>: eigenvalue</li>
+<li><code>A_eigenvalues, A_eigenvectors = linalg.eig(A)</code>: eigenvalues and eigenvectors</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="plotting">Plotting</h4>
+
+<h4 id="example:curvefitting">Example: Curve Fitting</h4>
+
+<ul>
+<li>Least-square fitting. (<code>linalg.lstsq()</code>)</li>
+</ul>
+
+<h4 id="arraysonstructuredgrids">Arrays on Structured Grids</h4>
+
+<ul>
+<li>Situation: When you have a series of numbers in two dimensions and you want to put into every index of (x, y), filling with loops will take a lot of computing time.</li>
+<li>(?)</li>
+</ul>
+
+<h4 id="fileiowithnumpyarrays">File I/O with NumPy Arrays</h4>
+
+<ul>
+<li><code>repr</code> and <code>eval</code> functions.
+
+<ul>
+<li><code>repr(a)</code> normally will span multiple lines so storing more than one array in a file requires some delimiter text between arrays.</li>
+</ul></li>
+<li>Using &#8216;pickling&#8217; via the <code>cPickle</code> module. (C-implemented pickling)
+
+<ul>
+<li><code>cPickle.dump(a1, file)</code> and <code>cPickle.load(file)</code></li>
+</ul></li>
+<li>Converting to binary format.
+
+<ul>
+<li>Only byte sequence, no data information (may need a header text for the array).</li>
+<li>Need to consider about the endianess problem. Then use <code>byteswap()</code> function to convert to proper format if needed.</li>
+</ul></li>
+</ul>
+
+<h3 id="othertoolsfornumericalcomputations">Other Tools for Numerical Computations</h3>
+
+<h4 id="thescientificpythonpackage">The ScientificPython Package</h4>
+
+<ul>
+<li><p><code>from Scientific.Physics.PhysicalQuantities import PhysicalQuantity as PQ</code></p></li>
+<li><p><code>from Scientific.Functions.Interpolation import InterpolatingFunction as Ip</code></p>
+
+<pre><code># Import the statistics module
+import Scientific.Statistics as S
+from Scientific.Statistics.Histogram import Histogram
+
+# Import the least squares module
+from Scientific.Functions.LeastSquares import leastSquaresFit
+r = leastSquaresFit(f, p_guess, data, max_iterations=None)`
+</code></pre></li>
+</ul>
+
+<h4 id="thescipypackage">The SciPy Package</h4>
+
+<ul>
+<li>Special mathematical functions. <code>from scipy import special</code>
+
+<ul>
+<li>Bessel function: <code>from scipy.special import jn_zeros</code></li>
+</ul></li>
+</ul>
+
+<h2 id="combiningpythonwithfortrancandc">Combining Python with Fortran, C, and C++</h2>
+
+<h3 id="aboutmixedlanguageprogramming">About Mixed Language Programming</h3>
+
+<ul>
+<li>Wrapper code.
+
+<ul>
+<li>The approach based on wrapper code allows transfer of huge data structures by just passing pointers around.</li>
+</ul></li>
+</ul>
+
+<h4 id="callingcfrompython">Calling C from Python</h4>
+
+<ul>
+<li>All objects in Python are derived from the <code>PyObject</code> &#8220;class&#8221; (Python is coded in pure C, but the implementation simulates object-oriented programming).
+
+<ul>
+<li>A wrapper function typically takes two arguments, <code>self</code> and <code>args</code>.
+
+<ul>
+<li><code>self</code> is only relevance only when dealing with instance methods.</li>
+<li><code>args</code> holds a tuple of the arguments sent from Python.</li>
+</ul></li>
+</ul></li>
+<li>Extension module.</li>
+</ul>
+
+<h4 id="automaticgenerationofwrappercode">Automatic Generation of Wrapper Code</h4>
+
+<ul>
+<li>Python C API: manual work (boring and error-prone).</li>
+<li>SWIG (Simplified Wrapper Interface Generator):</li>
+<li>F2PY</li>
+<li>Instant: can be used to put C or C++ code inline in Python code and get automatically compiled as an extension library.</li>
+</ul>
+
+<h4 id="combiningpythonancc">Combining Python anc C</h4>
+
+<ul>
+<li>SWIG
+
+<ul>
+<li><code>%module</code> directive defines the name of the extension module.</li>
+<li><code>%{...}%</code> block is used for inserting C code necessary for successful compiltion of the Python-C interface.</li>
+<li>Distutils module: for running the <code>setup.py</code></li>
+</ul></li>
+</ul>
+
+<h4 id="combiningpythonandcclasses">Combining Python and C++ Classes</h4>
+
+<ul>
+<li>When SWIG wraps a C++ class, the wrapper functions are stand-alone functions, not member functions of a class.</li>
+</ul>
+
+<h3 id="introductiontoguiprogramming">Introduction to GUI Programming</h3>
+
+<h3 id="webinterfacesandcgiprogramming">Web Interfaces and CGI Programming</h3>
+
+<h4 id="miscellaneoustopics">Miscellaneous Topics</h4>
+
+<h5 id="parsingcommand-linearguments">Parsing Command-Line Arguments</h5>
+
+<ul>
+<li><code>getopt</code> module
+
+<ul>
+<li><code>options, args = getopt.getopt(sys.argv[1:], 'hd:i', ['help', 'directory=', 'confirm'])</code>
+
+<ul>
+<li>Arguments:
+
+<ul>
+<li>a list of strings representing the options to be parsed</li>
+<li>short options; <code>':'</code> meaning taking an argument</li>
+<li>long options; <code>'='</code> meaning taking an argument</li>
+</ul></li>
+<li>A <code>(options, args)</code>-tuple is returned.</li>
+</ul></li>
+</ul></li>
+<li><code>optparse</code> module</li>
+</ul>
+
+<h5 id="platform-dependentoperations">Platform-Dependent Operations</h5>
+
+<ul>
+<li><code>os.name</code>: the name of the operating system</li>
+<li><code>sys.platform</code>: a platform identifier</li>
+</ul>
+
+<h5 id="run-timegenerationofcode">Run-Time Generation of Code</h5>
+
+<ul>
+<li>The <code>eval</code> function applies to expressions only, not complete statements.</li>
+</ul>
+
+<h4 id="regularexpressionsandtextprocessing">Regular Expressions and Text Processing</h4>
+
+<h4 id="toolsforhandlingdatainfiles">Tools for Handling Data in Files</h4>
+
+<h5 id="picklingobjects">Pickling Objects</h5>
+
+<ul>
+<li>The <code>pickle</code> module is rather slow for large data structures. An efficient C implementation of the module, <code>cPickle</code>, is available with the same interface.</li>
+</ul>
+
+<h5 id="shelvingobjects">Shelving Objects</h5>
+
+<ul>
+<li>It stores the objects in a file-based dictionary, referred to as a shelf object.</li>
+</ul>
+
+<h5 id="binaryinputoutput">Binary Input/Output</h5>
+
+<ul>
+<li><code>struct</code> module
+
+<ul>
+<li><code>pack</code> function in <code>struct</code> translates Python variables into their quivalent byte representation in C. (<code>struct.pack('i', np)</code>) converts variable <code>np</code> to a C <code>int</code> in binary format.</li>
+<li>Very slow. Much better performance by using NumPy arrays and associated I/O tools.</li>
+<li><code>struct.calcsize('i')</code></li>
+<li><code>n = (struct.unpack('i', data[start:stop]))[0]</code>
+
+<ul>
+<li>The return value from <code>struct.unpack</code> is always a tuple, even if just a single number is read.</li>
+</ul></li>
+<li><code>&gt;</code>: big-endian; <code>&lt;</code>: little-endian</li>
+</ul></li>
+</ul>
+
+<h4 id="scriptsinvolvinglocalandremotehosts">Scripts Involving Local and Remote Hosts</h4>
+
+<h4 id="classes">Classes</h4>
+
+<h5 id="implementinggetsetfunctionsviaproperties">Implementing Get/Set Functions via Properties</h5>
+
+<p><code>x = property(fget=get_x, fset=set_x, doc='x attribute')</code></p>
+
+<h4 id="scopeofvariables">Scope of Variables</h4>
+
+<h2 id="candcprogrammingwithnumpyarrays">C and C++ Programming with NumPy Arrays</h2>
+    </div>
+</body>
+</html>
